@@ -33,11 +33,6 @@ public class MoverPlayer : MonoBehaviour
 
     [SerializeField]
     private AudioClip sonidoAtaque;
-
-    /*[SerializeField]
-    private GameObject ko;
-    [SerializeField]
-    private GameObject restart;*/
     
     public AudioSource sonidoSource;
 
@@ -140,16 +135,15 @@ public class MoverPlayer : MonoBehaviour
 
         if (vida <= 0)
         {
-            gameController.finXogo = true;
-            //ko.SetActive(true);
-            //restart.SetActive(true);
+            gameController.perder = true;
+            
             anim.SetBool("muerto", true);
         }
 
         if (coll.CompareTag("Final"))
         {
-            Debug.Log("prueba");
-            gameController.finXogo = true;
+            
+            gameController.ganar = true;
         }
 
     }

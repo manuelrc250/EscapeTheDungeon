@@ -21,22 +21,35 @@ public class GameController : MonoBehaviour
     private int llavesTotales = 5;
     private int llavesCogidas = 0;
 
-    public bool finXogo;
+    public bool perder;
+    public bool ganar;
     public bool restartXogo;
 
     [Header("UI Movil")]
     [SerializeField]
     private GameObject goUIMovil;
 
-    public bool FinXogo
+    public bool Perder
     {
         get
         {
-            return finXogo;
+            return perder;
         }
         set
         {
-            finXogo = value;
+            perder = value;
+        }
+    }
+
+    public bool Ganar
+    {
+        get
+        {
+            return ganar;
+        }
+        set
+        {
+            ganar = value;
         }
     }
 
@@ -57,7 +70,8 @@ public class GameController : MonoBehaviour
     void Start()
     {
         ActualizarTextoLlaves();
-        FinXogo = false;
+        perder = false;
+        ganar = false;
         RestartXogo = false;
 
         puertaJefe = GameObject.FindGameObjectWithTag("PuertaJefe");
@@ -80,13 +94,13 @@ public class GameController : MonoBehaviour
             return;
         }
         
-        if(finXogo && !gameOver.activeSelf)
+        if(perder)
         {
             gameOver.SetActive(true);
             restart.SetActive(true);
         }
 
-        if (finXogo)
+        if (ganar)
         {
             win.SetActive(true);
             return;
@@ -118,6 +132,7 @@ public class GameController : MonoBehaviour
         barraDeVida.fillAmount = vida / vidaMaxima;
     }
 
+   
    
 
    

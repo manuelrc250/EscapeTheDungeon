@@ -21,7 +21,7 @@ public class Final : MonoBehaviour
     {
         if (coll.CompareTag("Player"))
         {
-            gameController.finXogo = true;
+            gameController.ganar = true;
         }
     }
 }
