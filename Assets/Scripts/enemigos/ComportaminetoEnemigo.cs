@@ -21,7 +21,7 @@ public class ComportaminetoEsqueleto : MonoBehaviour
     public bool atacando;
 
     private int vida = 100;
-    private int dañoPorAtaque = 20;
+    private int dañoPorAtaque = 40;
 
     private Rigidbody rb;
 
@@ -71,7 +71,7 @@ public class ComportaminetoEsqueleto : MonoBehaviour
             vida -= dañoPorAtaque; 
 
             //Aplicar fuerza de Knockback
-            float fuerzaKnockback = 30f; 
+            float fuerzaKnockback = 15f; 
             rb.AddForce(direccionKnockback * fuerzaKnockback, ForceMode.Impulse);
 
             ataqueEnemigo();

@@ -125,7 +125,7 @@ public class MoverPlayer : MonoBehaviour
             vida -= dañoPorAtaque;
 
             //Aplicar fuerza de Knockback
-            float fuerzaKnockback = 15f;
+            float fuerzaKnockback = 5f;
             rb.AddForce(direccionKnockback * fuerzaKnockback, ForceMode.Impulse);
 
             gameController.actualizarBarraDeVida(vida, vidaMaxima);
